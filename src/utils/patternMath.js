@@ -7,7 +7,7 @@ export const calculateFootSts = (footCirc, stitchGauge) => {
     return roundEven(footCirc * stitchGauge * 0.9)
 }
 
-export const castOn = (footCirc, stitchGauge) => {
+export const castOnSts = (footCirc, stitchGauge) => {
     return roundEven(calculateFootSts(footCirc, stitchGauge) / 6) * 2
 }
 
@@ -21,10 +21,6 @@ export const patternStsOnFoot = (footCirc, stitchGauge, patternRepeat) => {
 
 export const patternFramingSts = (footCirc, stitchGauge, patternRepeat) => {
     return (calculateFootSts(footCirc, stitchGauge) - patternStsOnFoot(footCirc, stitchGauge, patternRepeat))/2
-}
-
-export const soleSts = (footCirc, stitchGauge) => {
-    return calculateFootSts(footCirc, stitchGauge) / 2
 }
 
 export const gussetInc = (footCirc, stitchGauge) => {
