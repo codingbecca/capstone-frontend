@@ -4,14 +4,14 @@ export default function NavBar() {
   return (
     <nav aria-label="Main Navigation" role="navigation">
       <ul className="nav">
-        <li className="nav-link">
+        {/* <li className="nav-link">
           <NavLink to="/">Home</NavLink>
+        </li> */}
+        <li className="nav-link">
+          <NavLink to="/">New Pattern</NavLink>
         </li>
         <li className="nav-link">
-          <NavLink to="/patterns">Patterns</NavLink>
-        </li>
-        <li className="nav-link">
-          <NavLink to="/newpattern">New Pattern</NavLink>
+          <NavLink to="/patterns" end>Patterns</NavLink>
         </li>
         <li className="nav-link">
           <NavLink to="/newproject">New Project</NavLink>
