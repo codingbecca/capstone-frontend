@@ -54,6 +54,29 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* position: fixed;
+  top: 0;
+  width: 100%; */
+}
+
+.nav-link {
+  display: inline;
+  border-right: 1px solid #747bff;
+  padding: 0 1rem 0 1rem;
+}
+
+.nav-link:last-child {
+  border-right: none;
+}
+
+.nav-link a.active {
+  background-color: aqua;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

@@ -13,7 +13,7 @@ import {
   legLength,
 } from "../utils/patternMath.js";
 
-export default function PatternDetail(
+export default function PatternDetail({
   footCirc,
   footLength,
   thighCirc,
@@ -21,7 +21,7 @@ export default function PatternDetail(
   stitchGauge,
   rowGauge,
   patternRpt
-) {
+}) {
     //numbers necessary for generating the pattern detail
     const footSts = calculateFootSts(footCirc, stitchGauge);
     const castOn = castOnSts(footCirc, stitchGauge);
@@ -117,42 +117,40 @@ export default function PatternDetail(
 
             <h4>Cuff</h4>
             <p>This section uses a special double increase. The increase is noted as dinc and is worked as follows: m1p, lifted inc (worked as a knit stitch)</p>
-            <p>
-                <ol>
-                    <li>Work 1x1 ribbing until last st, dinc, p1</li>
-                </ol>
-                <ul>
-                    <li>Work 3 rounds 1x1 ribbing</li>
-                </ul>
-                <ol start={5}>
-                    <li>k1, dinc, work 1x1 ribbing until end</li>
-                    <li>k1, dinc, work 1x1 ribbing until end</li>
-                </ol>
-                <ul>
-                    <li>Work 6 rounds 1x1 ribbing</li>
-                </ul>
-                <ol start={13}>
-                    <li>Work 1x1 ribbing to last st, dinc, p1</li>
-                    <li>Work 1x1 ribbing to last st, dinc, p1</li>
-                </ol>
-                <ul>
-                    <li>Work 12 rounds 1x1 ribbing</li>
-                </ul>
-                <ol start={27}>
-                    <li>k1, dinc, work 1x1 ribbing until end</li>
-                    <li>k1, dinc, work 1x1 ribbing until end</li>
-                </ol>
-                <ul>
-                    <li>Work 6 rounds 1x1 ribbing</li>
-                </ul>
-                <ol start={35}>
-                    <li>(eyelet round) 1x1 rib 3, *yo, k2tog, 1x1 rib 4 repeat from * to last 3 stitches, yo, k2tog, p1</li>
-                </ol>
-                <ul>
-                    <li>Work 4 rounds 1x1 ribbing</li>
-                    <li>Cast off using choice of cast off</li>
-                </ul>
-            </p>
+            <ol>
+                <li>Work 1x1 ribbing until last st, dinc, p1</li>
+            </ol>
+            <ul>
+                <li>Work 3 rounds 1x1 ribbing</li>
+            </ul>
+            <ol start={5}>
+                <li>k1, dinc, work 1x1 ribbing until end</li>
+                <li>k1, dinc, work 1x1 ribbing until end</li>
+            </ol>
+            <ul>
+                <li>Work 6 rounds 1x1 ribbing</li>
+            </ul>
+            <ol start={13}>
+                <li>Work 1x1 ribbing to last st, dinc, p1</li>
+                <li>Work 1x1 ribbing to last st, dinc, p1</li>
+            </ol>
+            <ul>
+                <li>Work 12 rounds 1x1 ribbing</li>
+            </ul>
+            <ol start={27}>
+                <li>k1, dinc, work 1x1 ribbing until end</li>
+                <li>k1, dinc, work 1x1 ribbing until end</li>
+            </ol>
+            <ul>
+                <li>Work 6 rounds 1x1 ribbing</li>
+            </ul>
+            <ol start={35}>
+                <li>(eyelet round) 1x1 rib 3, *yo, k2tog, 1x1 rib 4 repeat from * to last 3 stitches, yo, k2tog, p1</li>
+            </ol>
+            <ul>
+                <li>Work 4 rounds 1x1 ribbing</li>
+                <li>Cast off using choice of cast off</li>
+            </ul>
         </div>
     )
 

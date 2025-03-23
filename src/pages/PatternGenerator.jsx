@@ -7,6 +7,7 @@ export default function PatternGenerator(){
             <main>
                 <NewPatternForm />
                 <PatternDetail />
+                <button>Save Pattern</button>
             </main>
         </div>
     )

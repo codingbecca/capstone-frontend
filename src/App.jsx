@@ -1,14 +1,26 @@
+import {Routes, Route} from 'react-router'
 
-import PatternDetail from './components/PatternDetail'
-import NewPatternForm from './components/NewPatternForm'
+import NavBar from './components/NavBar'
+import PatternGenerator from './pages/PatternGenerator'
+import PatternDetailsPage from './pages/PatternDetailsPage'
 
 function App() {
   
 
   return (
     <>
-      <NewPatternForm />
-      <PatternDetail />
+      <div>
+        <NavBar/>
+        <Routes>
+          <Route path='/newpattern' element={<PatternGenerator/>} />
+          <Route path='/patterns'>
+            {/* <Route index element={}/> */}
+            <Route path=':patternId' element={<PatternDetailsPage />} />
+
+
+          </Route>
+        </Routes>
+      </div>
     </>
   )
 }
