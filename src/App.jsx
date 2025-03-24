@@ -18,6 +18,7 @@ function App() {
           <Route path='/patterns'>
             <Route index element={<PatternsPage />}/>
             <Route path=':patternId' element={<PatternDetailsPage />} />
+            <Route path=':patternId/edit' element={<PatternGenerator/>}/>
           </Route>
           <Route path='newproject' element={<NewProjectPage />}/>
         </Routes>

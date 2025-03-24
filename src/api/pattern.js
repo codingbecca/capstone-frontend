@@ -21,7 +21,7 @@ export async function getPattern(patternId) {
 }
 
 // update a pattern
-export async function updatePattern(patternId, patternDetails) {
+export async function editPattern(patternId, patternDetails) {
     const res = await axios.patch(`/api/patterns/${patternId}`, patternDetails)
 
     return res.data

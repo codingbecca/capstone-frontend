@@ -20,7 +20,7 @@ export const patternStsOnFoot = (footCirc, stitchGauge, patternRepeat) => {
 }
 
 export const patternFramingSts = (footCirc, stitchGauge, patternRepeat) => {
-    return (calculateFootSts(footCirc, stitchGauge) - patternStsOnFoot(footCirc, stitchGauge, patternRepeat))/2
+    return (calculateFootSts(footCirc, stitchGauge) / 2 - patternStsOnFoot(footCirc, stitchGauge, patternRepeat))/2
 }
 
 export const gussetInc = (footCirc, stitchGauge) => {

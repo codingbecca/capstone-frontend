@@ -1,14 +1,33 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {useReactToPrint} from "react-to-print"
 
 import PatternDetail from "../components/PatternDetail";
+import { useNavigate, useParams } from "react-router";
+import { getPattern } from "../api/pattern";
 
 
 export default function PatternDetailsPage() {
+    const [pattern, setPattern] = useState()
+
+    
     const ref = useRef(null)
+    const {patternId} = useParams()
+    const navigate = useNavigate()
+    
+    useEffect(() => {
+        const fetchPattern = async() =>{
+            try {
+                const fetchedPattern = await getPattern(patternId)
+                setPattern(fetchedPattern)
+            } catch (e) {
+                console.error(e)
+            }
+        }
+        fetchPattern()
+    }, [patternId])
 
     const reactToPrintFn = useReactToPrint({
-        title: "Toe up stocking", // todo: change to title of pattern
+        title: pattern.title, 
         contentRef: ref 
     })
 
@@ -16,10 +35,10 @@ export default function PatternDetailsPage() {
     return(
         <div>
             <div ref={ref}>
-                <PatternDetail />
+                <PatternDetail {...pattern} />
             </div>
             <button onClick={() => reactToPrintFn()}>Print</button>
-            <button>Edit</button>
+            <button onClick={() => navigate(`/patterns/${pattern._id}/edit`)}>Edit</button>
         </div>
     )
 }

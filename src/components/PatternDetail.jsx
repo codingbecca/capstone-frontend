@@ -14,27 +14,27 @@ import {
 } from "../utils/patternMath.js";
 
 export default function PatternDetail({
-  footCirc,
-  footLength,
-  thighCirc,
-  desiredLength,
-  stitchGauge,
-  rowGauge,
-  patternRpt
+  foot_circ,
+  foot_length,
+  thigh_circ,
+  sock_length,
+  stitch_gauge,
+  row_gauge,
+  pattern_repeat
 }) {
     //numbers necessary for generating the pattern detail
-    const footSts = calculateFootSts(footCirc, stitchGauge);
-    const castOn = castOnSts(footCirc, stitchGauge);
-    const inToGusset = inBeforeGusset(footLength, footCirc, stitchGauge, rowGauge);
-    const patternSts = patternStsOnFoot(footCirc, stitchGauge, patternRpt);
-    const framingSts = patternFramingSts(footCirc, stitchGauge, patternRpt);
-    const gussetI = gussetInc(footCirc, stitchGauge);
-    const gussetE = gussetExp(footCirc, stitchGauge);
-    const wrapSts = wrappedSts(footCirc, stitchGauge);
-    const stage1Inc = incEveryOtherRnd(thighCirc, footCirc, stitchGauge);
-    const stage2Inc = incEvery8Rnds(thighCirc, footCirc, stitchGauge);
-    const stage3Inc = incEvery10Rnds(thighCirc, footCirc, stitchGauge);
-    const totalLength = legLength(desiredLength, rowGauge);
+    const footSts = calculateFootSts(foot_circ, stitch_gauge);
+    const castOn = castOnSts(foot_circ, stitch_gauge);
+    const inToGusset = inBeforeGusset(foot_length, foot_circ, stitch_gauge, row_gauge);
+    const patternSts = patternStsOnFoot(foot_circ, stitch_gauge, pattern_repeat);
+    const framingSts = patternFramingSts(foot_circ, stitch_gauge, pattern_repeat);
+    const gussetI = gussetInc(foot_circ, stitch_gauge);
+    const gussetE = gussetExp(foot_circ, stitch_gauge);
+    const wrapSts = wrappedSts(foot_circ, stitch_gauge);
+    const stage1Inc = incEveryOtherRnd(thigh_circ, foot_circ, stitch_gauge);
+    const stage2Inc = incEvery8Rnds(thigh_circ, foot_circ, stitch_gauge);
+    const stage3Inc = incEvery10Rnds(thigh_circ, foot_circ, stitch_gauge);
+    const totalLength = legLength(sock_length, row_gauge);
 
     return(
         <div>
@@ -105,7 +105,7 @@ export default function PatternDetail({
             <ul>
                 <li>work sl1, k1 as established across heel flap until one stitch before the gap, ssk, k1</li>
                 <li>knit {framingSts} stitches, work in pattern across next {patternSts} stitches, k {framingSts}, k1,, k2tog, knit to halfway through heel flap. move BOR marker to this point</li>
-                <li>work in pattern around until sock measures {footLength} inches</li>
+                <li>work in pattern around until sock measures {foot_length} inches</li>
             </ul>
             <p>Increase Round: keeping pattern correct, m1l, work in pater to last st, m1r, p1</p>
             <ul>

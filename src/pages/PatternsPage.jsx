@@ -1,24 +1,27 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { Link } from "react-router"
 
 import PatternSummary from "../components/PatternSummary"
 import { getPatterns } from "../api/pattern"
+import { useDispatch, useSelector } from "react-redux"
+import { setPatterns } from "../store/patternsSlice"
 
 
 export default function PatternsPage(){
-    const [patterns, setPatterns] = useState([])
+    const dispatch = useDispatch();
+    const patterns = useSelector(state => state.patterns)
 
     useEffect(() => {
         const fetchPatterns = async() => {
             try {
                 const allPatterns = await getPatterns()
-                setPatterns(allPatterns)
+                dispatch(setPatterns(allPatterns))
             } catch (e) {
                 console.error("Failed to fetch patterns", e)
             }
         }
         fetchPatterns()
-    }, [])
+    }, [dispatch])
     
     return(
         patterns.map(pattern => (
