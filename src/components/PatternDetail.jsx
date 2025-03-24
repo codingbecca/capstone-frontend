@@ -20,7 +20,8 @@ export default function PatternDetail({
   sock_length,
   stitch_gauge,
   row_gauge,
-  pattern_repeat
+  pattern_repeat,
+  title
 }) {
     //numbers necessary for generating the pattern detail
     const footSts = calculateFootSts(foot_circ, stitch_gauge);
@@ -38,6 +39,7 @@ export default function PatternDetail({
 
     return(
         <div>
+            <h3>{title}</h3>
             <h4>Toe</h4>
             <p>Using Judy's magic cast on or the Turkish cast on (or other choice of cast on for toe-up socks), cast on a total of {castOn} stitches</p>
             <p>Knit all stitches, placing a marker at BOR and at the halfway point</p>

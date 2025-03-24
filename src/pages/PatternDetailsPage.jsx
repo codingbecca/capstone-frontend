@@ -3,7 +3,7 @@ import {useReactToPrint} from "react-to-print"
 
 import PatternDetail from "../components/PatternDetail";
 import { useNavigate, useParams } from "react-router";
-import { getPattern } from "../api/pattern";
+import { getPattern, deletePattern } from "../api/pattern";
 
 
 export default function PatternDetailsPage() {
@@ -27,9 +27,14 @@ export default function PatternDetailsPage() {
     }, [patternId])
 
     const reactToPrintFn = useReactToPrint({
-        title: pattern.title, 
+        title: pattern?.title || 'New Pattern', 
         contentRef: ref 
     })
+
+    const handleDelete = async() => {
+        await deletePattern(patternId)
+        navigate('/patterns')
+    }
 
 
     return(
@@ -39,6 +44,7 @@ export default function PatternDetailsPage() {
             </div>
             <button onClick={() => reactToPrintFn()}>Print</button>
             <button onClick={() => navigate(`/patterns/${pattern._id}/edit`)}>Edit</button>
+            <button onClick={handleDelete}>Delete</button>
         </div>
     )
 }
