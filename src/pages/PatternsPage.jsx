@@ -24,10 +24,15 @@ export default function PatternsPage(){
     }, [dispatch])
     
     return(
-        patterns.map(pattern => (
-            <Link to={`/patterns/${pattern._id}`} key={pattern._id}>
-                <PatternSummary pattern={pattern} />
-            </Link>
-        ))
+        <div className="flex flex-wrap m-15 bg-slate-800 px-6 rounded-xl justify-around items-center">
+            {patterns.map(pattern => (
+                <div className="w-1/4">
+                    
+                <Link to={`/patterns/${pattern._id}`} key={pattern._id}>
+                    <PatternSummary pattern={pattern} />
+                </Link>
+                </div>
+            ))}
+        </div>
     )
 }
