@@ -1,3 +1,4 @@
+// helper function to calculate the numbers for the pattern
 import {
   calculateFootSts,
   castOnSts,

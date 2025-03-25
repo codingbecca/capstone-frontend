@@ -1,5 +1,6 @@
 @import "tailwindcss";
 :root{
+  /* color palette */
   --background: #0f172a; /* slate-900 */
   --foreground: #e2e8f0; /* slate-300 */
   --primary: #3b82f6; /* blue-500 */
@@ -19,6 +20,7 @@ body {
   color: var(--foreground);
 }
 
+/* navbar styling */
 .nav{
   list-style-type: none;
   margin: 0;
@@ -44,6 +46,7 @@ body {
   background-color: var(--active-link);
 }
 
+/* settings for printing */
 @media print{
   body{
     color: black;

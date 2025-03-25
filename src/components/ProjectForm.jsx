@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createProject } from "../api/project";
+import MessageDiv from "./MessageDiv";
 
 const emptyProject = {
   saveToRavelry: false,
@@ -38,7 +39,7 @@ export default function ProjectForm() {
     e.preventDefault();
 
     try {
-      const response = await createProject(formData);
+      await createProject(formData);
       setFormData(emptyProject);
 
       setMessage("Project created successfully!");
@@ -52,23 +53,7 @@ export default function ProjectForm() {
   return (
     <div className="mt-6 rounded-lg">
       {/* Success/Error Message Box */}
-      {message && (
-        <div
-          className={`p-4 m-4 rounded-lg text-center w-md mx-auto ${
-            messageType === "success"
-              ? "bg-green-500 text-white"
-              : "bg-red-500 text-white"
-          }`}
-        >
-          <p>{message}</p>
-          <button
-            onClick={() => setMessage(null)}
-            className="mt-2 px-4 py-2 bg-white text-black rounded-lg"
-          >
-            OK
-          </button>
-        </div>
-      )}
+      {message && <MessageDiv message={message} messageType={messageType} setMessage={setMessage}/>}
       {/* create project form */}
       <form
         action=""

@@ -4,9 +4,6 @@ export default function NavBar() {
   return (
     <nav aria-label="Main Navigation" role="navigation" className="pt-3 w-full">
       <ul className="nav text-center">
-        {/* <li className="nav-link">
-          <NavLink to="/">Home</NavLink>
-        </li> */}
         <li className="nav-link">
           <NavLink to="/">New Pattern</NavLink>
         </li>
