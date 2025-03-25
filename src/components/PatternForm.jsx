@@ -22,6 +22,7 @@ export default function NewPatternForm({
     <div>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="title">Pattern title:</label>
+        <p>Pattern title must be unique</p>
         <input
           type="text"
           name="title"
