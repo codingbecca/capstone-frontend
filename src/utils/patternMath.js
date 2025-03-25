@@ -41,7 +41,7 @@ const totalInc = (thighCirc, footCirc, stitchGauge) => {
 }
 
 const stageI = (thighCirc, footCirc, stitchGauge) => {
-    return roundEven(totalInc(thighCirc, footCirc, stitchGauge))
+    return roundEven(totalInc(thighCirc, footCirc, stitchGauge) / 2)
 }
 
 const stageIIandIII = (thighCirc, footCirc, stitchGauge) => {
