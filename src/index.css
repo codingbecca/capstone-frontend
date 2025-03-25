@@ -47,3 +47,14 @@ body {
 .nav-link a.active {
   background-color: var(--active-link);
 }
+
+@media print{
+  body{
+    color: black;
+    background-color: white;
+  }
+}
+
+@page {
+  margin: 0.5in;
+}

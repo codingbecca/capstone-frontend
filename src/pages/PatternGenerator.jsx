@@ -48,8 +48,7 @@ export default function PatternGenerator() {
         } else {
             await createPattern(pattern)
         }
-        // setPattern(emptyPattern);
-        setIsSubmitted(false);
+
         navigate(`/patterns/${pattern._id}`)
     } catch (e) {
         console.error(e)
@@ -57,7 +56,7 @@ export default function PatternGenerator() {
   }
 
   return (
-    <div>
+    <div className="p-2">
       <main>
         <PatternForm
           formData={pattern}
@@ -67,7 +66,7 @@ export default function PatternGenerator() {
         {isSubmitted && (
           <div>
             <PatternDetail {...pattern} />
-            <button onClick={handleSave}>{isNewPattern ? "Save Pattern" : "Update Pattern"}</button>
+            <button onClick={handleSave} className="py-3 px-4 mt-4 mx-auto block font-semibold bg-slate-500 rounded-lg focus:bg-slate-400 focus:outline-none hover:bg-slate-400">{isNewPattern ? "Save Pattern" : "Update Pattern"}</button>
           </div>
         )}
       </main>

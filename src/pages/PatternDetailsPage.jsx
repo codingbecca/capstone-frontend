@@ -7,7 +7,7 @@ import { getPattern, deletePattern } from "../api/pattern";
 
 
 export default function PatternDetailsPage() {
-    const [pattern, setPattern] = useState()
+    const [pattern, setPattern] = useState(null)
 
     
     const ref = useRef(null)
@@ -36,15 +36,19 @@ export default function PatternDetailsPage() {
         navigate('/patterns')
     }
 
+    if(!pattern) return <p className="text-center p-4">Pattern loading...</p>
 
     return(
-        <div>
+        <div className="p-2">
             <div ref={ref}>
                 <PatternDetail {...pattern} />
             </div>
-            <button onClick={() => reactToPrintFn()}>Print</button>
-            <button onClick={() => navigate(`/patterns/${pattern._id}/edit`)}>Edit</button>
-            <button onClick={handleDelete}>Delete</button>
+            <div className="text-center">
+
+            <button onClick={() => reactToPrintFn()} className="py-3 px-4 mt-4 m-2 font-semibold bg-slate-500 rounded-lg focus:bg-slate-400 focus:outline-none hover:bg-slate-400">Print</button>
+            <button onClick={() => navigate(`/patterns/${pattern._id}/edit`)} className="py-3 px-4 mt-4 m-2 font-semibold bg-slate-500 rounded-lg focus:bg-slate-400 focus:outline-none hover:bg-slate-400">Edit</button>
+            <button onClick={handleDelete} className="py-3 px-4 mt-4 m-2 font-semibold bg-slate-500 rounded-lg focus:bg-slate-400 focus:outline-none hover:bg-slate-400">Delete</button>
+            </div>
         </div>
     )
 }
