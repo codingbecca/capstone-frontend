@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 export default function NavBar() {
   return (
-    <nav aria-label="Main Navigation" role="navigation">
+    <nav aria-label="Main Navigation" role="navigation" className="pt-3">
       <ul className="nav">
         {/* <li className="nav-link">
           <NavLink to="/">Home</NavLink>

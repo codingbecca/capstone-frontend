@@ -1,57 +1,23 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tailwindcss";
+:root{
+  --background: #0f172a; /* slate-900 */
+  --foreground: #e2e8f0; /* slate-300 */
+  --primary: #3b82f6; /* blue-500 */
+  --primary-hover: #2563eb; /* blue-600 */
+  --secondary: #1e40af; /* blue-800 */
+  --secondary-hover: #1e3a8a; /* blue-900 */
+  --accent: #38bdf8; /* sky-400 */
+  --accent-hover: #0ea5e9; /* sky-500 */
+  --border: #1e293b; /* slate-800 */
+  --card-bg: #1e293b; /* slate-800 */
+  --card-text: #f1f5f9; /* slate-100 */
+  --active-link: #525252; /* slate-500 */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/** Examples */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 .nav{
@@ -65,7 +31,7 @@ button:focus-visible {
 
 .nav-link {
   display: inline;
-  border-right: 1px solid #747bff;
+  border-right: 1px solid var(--foreground);
   padding: 0 1rem 0 1rem;
 }
 
@@ -73,19 +39,11 @@ button:focus-visible {
   border-right: none;
 }
 
-.nav-link a.active {
-  background-color: aqua;
+.nav-link a {
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  border-radius: 5px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.nav-link a.active {
+  background-color: var(--active-link);
 }
