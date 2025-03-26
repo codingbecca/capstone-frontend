@@ -65,7 +65,7 @@ export default function PatternGenerator() {
       console.error(e);
       setIsSaving(false);
       setMessage(
-        e.response?.data?.message || "An error occurred while saving pattern."
+        e.message || "An error occurred while saving pattern."
       );
     }
   };

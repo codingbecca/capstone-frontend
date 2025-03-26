@@ -20,17 +20,26 @@ export default function PatternsPage() {
         dispatch(setPatterns(allPatterns));
       } catch (e) {
         console.error("Failed to fetch patterns", e);
-        setMessage(
-          e.response?.data?.message ||
-            "An error occurred while fetching patterns."
-        );
+        setMessage(e.message || "An error occurred while fetching patterns.");
       }
     };
     fetchPatterns();
   }, [dispatch]);
 
   if (patterns.length === 0) {
-    return <p className="text-center p-4">Loading patterns...</p>;
+    return (
+      <div>
+        {/* Error Message Box */}
+        {message && (
+          <MessageDiv
+            message={message}
+            messageType="error"
+            setMessage={setMessage}
+          />
+        )}
+        <p className="text-center p-4">Loading patterns...</p>
+      </div>
+    );
   }
 
   return (
@@ -48,7 +57,7 @@ export default function PatternsPage() {
       <div className="flex flex-wrap m-15 bg-slate-800 px-6 rounded-xl justify-around items-center">
         {patterns.map((pattern) => (
           <div className="w-1/4" key={pattern._id}>
-            <Link to={`/patterns/${pattern._id}`} >
+            <Link to={`/patterns/${pattern._id}`}>
               <PatternSummary pattern={pattern} />
             </Link>
           </div>

@@ -11,7 +11,10 @@ export default function NavBar() {
           <NavLink to="/patterns" end>Patterns</NavLink>
         </li>
         <li className="nav-link">
-          <NavLink to="/newproject">New Project</NavLink>
+          <NavLink to="/projects" end>Projects</NavLink>
+        </li>
+        <li className="nav-link">
+          <NavLink to="/projects/newproject">New Project</NavLink>
         </li>
       </ul>
     </nav>

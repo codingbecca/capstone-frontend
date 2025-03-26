@@ -51,7 +51,7 @@ export default function PatternDetailsPage() {
     } catch (e) {
       console.error(e);
       setMessage(
-        e.response?.data?.message || "An error occurred while deleting pattern."
+        e.message || "An error occurred while deleting pattern."
       );
     }
   };
@@ -61,7 +61,22 @@ export default function PatternDetailsPage() {
     navigate(`/patterns/${pattern._id}/edit`)
   }
 
-  if (!pattern) return <p className="text-center p-4">Pattern loading...</p>;
+  if (!pattern){
+    return(
+      <div>
+        {/* Error Message Box */}
+      {message && (
+        <MessageDiv
+          message={message}
+          messageType="error"
+          setMessage={setMessage}
+        />
+      )}
+        <p className="text-center p-4">Pattern loading...</p>;
+      </div>
+    ) 
+
+  } 
 
   return (
     <div className="p-2">
