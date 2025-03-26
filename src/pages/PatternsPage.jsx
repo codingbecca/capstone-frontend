@@ -44,8 +44,8 @@ export default function PatternsPage() {
       )}
       <div className="flex flex-wrap m-15 bg-slate-800 px-6 rounded-xl justify-around items-center">
         {patterns.map((pattern) => (
-          <div className="w-1/4">
-            <Link to={`/patterns/${pattern._id}`} key={pattern._id}>
+          <div className="w-1/4" key={pattern._id}>
+            <Link to={`/patterns/${pattern._id}`} >
               <PatternSummary pattern={pattern} />
             </Link>
           </div>
