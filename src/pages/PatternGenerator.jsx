@@ -28,6 +28,7 @@ export default function PatternGenerator() {
 
   const isNewPattern = !patternId;
 
+  //fetches pattern if there is an Id in the URL, otherwise it set the pattern to an empty pattern
   useEffect(() => {
     if (isNewPattern) {
       setPattern(emptyPattern);
@@ -77,6 +78,7 @@ export default function PatternGenerator() {
           setFormData={setPattern}
           setIsSubmitted={setIsSubmitted}
         />
+
         {/* Error Message Box */}
         {message && (
           <MessageDiv
@@ -85,6 +87,8 @@ export default function PatternGenerator() {
             setMessage={setMessage}
           />
         )}
+
+        {/* pattern detail, will only render after form has been submitted */}
         {isSubmitted && (
           <div>
             <PatternDetail {...pattern} />

@@ -39,8 +39,10 @@ export default function PatternDetail({
     const totalLength = legLength(sock_length, row_gauge);
 
     return(
+        // this renders the text of a custom-sized toe up stocking pattern based on the above calculations
         <div className="p-6">
-            <h3 className="text-3xl font-bold text-center">{title}</h3>
+            <h3 className="text-3xl font-bold text-center pb-1">{title}</h3>
+            <p className="text-center">This pattern assumes you have an accent stitch pattern chosen of {pattern_repeat} stitches. Work according to this accent pattern where instructed</p>
             <h4 className="text-2xl font-semibold text-center border-b-1 mb-2 mt-3">Toe</h4>
             <p>Using Judy's magic cast on or the Turkish cast on (or other choice of cast on for toe-up socks), cast on a total of {castOn} stitches</p>
             <p>Knit all stitches, placing a marker at BOR and at the halfway point</p>

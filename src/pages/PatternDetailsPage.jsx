@@ -15,6 +15,7 @@ export default function PatternDetailsPage() {
   const { patternId } = useParams();
   const navigate = useNavigate();
 
+  //fetch pattern from the db when component renders or when the id in the URL changes
   useEffect(() => {
     const fetchPattern = async () => {
       try {
@@ -30,6 +31,7 @@ export default function PatternDetailsPage() {
     fetchPattern();
   }, [patternId]);
 
+  //functions to handle printing
   const reactToPrintFn = useReactToPrint({
     title: pattern?.title || "New Pattern",
     contentRef: ref,
@@ -71,9 +73,13 @@ export default function PatternDetailsPage() {
           setMessage={setMessage}
         />
       )}
+      
+      {/* pattern detail section */}
       <div ref={ref}>
         <PatternDetail {...pattern} />
       </div>
+
+      {/* print, edit, and delete buttons */}
       <div className="text-center">
         <button
           onClick={handlePrint}

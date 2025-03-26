@@ -12,6 +12,7 @@ export default function PatternsPage() {
   const dispatch = useDispatch();
   const patterns = useSelector((state) => state.patterns);
 
+  // fetches all patterns from db on component's first render
   useEffect(() => {
     const fetchPatterns = async () => {
       try {
@@ -42,6 +43,8 @@ export default function PatternsPage() {
           setMessage={setMessage}
         />
       )}
+
+      {/* pattern summaries section */}
       <div className="flex flex-wrap m-15 bg-slate-800 px-6 rounded-xl justify-around items-center">
         {patterns.map((pattern) => (
           <div className="w-1/4" key={pattern._id}>

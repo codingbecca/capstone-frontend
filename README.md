@@ -1,12 +1,20 @@
-# React + Vite
+# Custom Stocking Pattern Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for my Per Scholas capstone project — a four-page web app that generates a custom-sized, toe-up, thigh-high stocking pattern.
 
-Currently, two official plugins are available:
+## Features
+- **Pattern Generator:** The home page allows users to enter personal measurements (or those of the intended recipient), gauge swatch details, desired stocking length, and the length of an accent pattern. The app then calculates a tailored knitting pattern.
+- **Pattern Management:** Saved patterns can be accessed from the "Patterns" tab. Clicking on a pattern title opens the full pattern, where users can print, edit, or delete it.
+- **Project Tracker:** Users can log knitting projects with a name, notes, and recipient details.
+- **Ravelry Integration:** Projects can be saved directly to my personal Ravelry account.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology used
+- React (frontend framework)
+- Tailwind CSS & vanilla CSS (styling)
+- Axios (API requests)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Future work
+- **Project management:** (access saved projects from a "Projects" tab. Project card will open the project where users can edit or delete the project or save/update the project on Ravelry)
+- **User Authentication:** Implement signup and login functionality so users can have personal accounts.
+- **User-Specific Patterns:** Restrict the "Patterns" page to display only the patterns created by the logged-in user.
+- **OAuth for Ravelry:** Update the Ravelry integration to use OAuth, allowing users to save projects to their personal Ravelry accounts instead of mine.
