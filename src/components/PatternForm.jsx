@@ -21,8 +21,7 @@ export default function NewPatternForm({
   return (
     <div className="mt-6 rounded-lg">
       <form onSubmit={handleSubmit} className="bg-slate-800 shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md mx-auto">
-        <label htmlFor="title" className="block tex-sm font-medium">Pattern title:</label>
-        <p className="italic text-slate-400">Pattern title must be unique</p>
+        <label htmlFor="title" className="block tex-sm font-medium pb-0.5">Pattern title:</label>
         <input
           className="my-1 p-1 block rounded-md border w-full border-slate-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
           type="text"

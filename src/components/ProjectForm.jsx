@@ -15,6 +15,7 @@ const emptyProject = {
 
 export default function ProjectForm() {
   const [formData, setFormData] = useState(emptyProject);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState(null); // Holds success or error message
   const [messageType, setMessageType] = useState(null); // "success" or "error"
 
@@ -39,6 +40,7 @@ export default function ProjectForm() {
     e.preventDefault();
 
     try {
+      setIsSubmitting(true)
       await createProject(formData);
       setFormData(emptyProject);
 
@@ -47,6 +49,8 @@ export default function ProjectForm() {
     } catch (e) {
       setMessage(e.response?.data?.message || "An error occurred while submitting.");
             setMessageType("error");
+    } finally {
+      setIsSubmitting(false)
     }
   };
 
@@ -114,7 +118,8 @@ export default function ProjectForm() {
 
         <button
           type="submit"
-          className="py-3 px-4 mt-4 mx-auto block font-semibold bg-slate-500 rounded-lg focus:bg-slate-400 focus:outline-none hover:bg-slate-400"
+          disabled={isSubmitting}
+          className="py-3 px-4 mt-4 mx-auto block font-semibold bg-slate-500 rounded-lg cursor-pointer focus:bg-slate-400 focus:outline-none hover:bg-slate-400 disabled:bg-gray-700 disabled:text-gray-400 disabled:cursor-auto"
         >
           Save
         </button>

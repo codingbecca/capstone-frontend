@@ -69,8 +69,8 @@ export default function PatternDetail({
             </ol>
             <ul className="list-disc px-15">
                 <li>repeat rounds 1 and 2 {gussetI - 1} more times (gusset increased a total of {gussetI} stitches)</li>
-                <li>k{framingSts}, work in pattern across next {patternSts} stitches, k to marker, sm, k to next marker, sm, increase every by {gussetE} stitches before EOR</li>
-                <li>knit {framingSts} stitches, work in pattern across next {patternSts} stitches, k {framingSts}, k1, increase evenly between here and marker, k 2 marker. HOLD HERE FOR HEEL TURN</li>
+                <li>k{framingSts}, work in pattern across next {patternSts} stitches, k to marker, sm, k to next marker, sm, increase evenly by {gussetE} stitches before EOR</li>
+                <li>knit {framingSts} stitches, work in pattern across next {patternSts} stitches, k {framingSts}, k1, increase evenly by {gussetE} stitches between here and marker, k 2 marker. HOLD HERE FOR HEEL TURN</li>
             </ul>
 
             <h4 className="text-2xl font-semibold text-center border-b-1 mb-2 mt-3">Heel Turn</h4>

@@ -22,6 +22,7 @@ export default function PatternGenerator() {
   const { patternId } = useParams();
   const [pattern, setPattern] = useState(emptyPattern);
   const [isSubmitted, setIsSubmitted] = useState(false); // boolean used to toggle pattern details visibility
+  const [isSaving, setIsSaving] = useState(false); // boolean used to disable save button
   const [message, setMessage] = useState(null); // Holds error message
   const navigate = useNavigate();
 
@@ -49,16 +50,19 @@ export default function PatternGenerator() {
   }, [patternId]);
 
   const handleSave = async () => {
+    setIsSaving(true)
+    let newPattern
     try {
       if (!isNewPattern) {
-        await editPattern(pattern._id, pattern);
+        newPattern = await editPattern(pattern._id, pattern);
       } else {
-        await createPattern(pattern);
+        newPattern = await createPattern(pattern);
       }
 
-      navigate(`/patterns/${pattern._id}`);
+      navigate(`/patterns/${newPattern._id}`);
     } catch (e) {
       console.error(e);
+      setIsSaving(false);
       setMessage(
         e.response?.data?.message || "An error occurred while saving pattern."
       );
@@ -86,7 +90,8 @@ export default function PatternGenerator() {
             <PatternDetail {...pattern} />
             <button
               onClick={handleSave}
-              className="py-3 px-4 mt-4 mx-auto block font-semibold bg-slate-500 rounded-lg focus:bg-slate-400 focus:outline-none hover:bg-slate-400"
+              disabled={isSaving}
+              className="py-3 px-4 mt-4 mx-auto block font-semibold bg-slate-500 rounded-lg cursor-pointer focus:bg-slate-400 focus:outline-none hover:bg-slate-400 disabled:bg-gray-700 disabled:text-gray-400 disabled:cursor-auto"
             >
               {isNewPattern ? "Save Pattern" : "Update Pattern"}
             </button>

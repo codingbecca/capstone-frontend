@@ -9,6 +9,7 @@ import { getPattern, deletePattern } from "../api/pattern";
 export default function PatternDetailsPage() {
   const [pattern, setPattern] = useState(null);
   const [message, setMessage] = useState(null); //holds error message
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const ref = useRef(null);
   const { patternId } = useParams();
@@ -32,10 +33,17 @@ export default function PatternDetailsPage() {
   const reactToPrintFn = useReactToPrint({
     title: pattern?.title || "New Pattern",
     contentRef: ref,
+    onAfterPrint: () => setIsDisabled(false)
   });
+
+  const handlePrint = () => {
+    setIsDisabled(true)
+    reactToPrintFn()
+  }
 
   const handleDelete = async () => {
     try {
+      setIsDisabled(true);
       await deletePattern(patternId);
       navigate("/patterns");
     } catch (e) {
@@ -45,6 +53,11 @@ export default function PatternDetailsPage() {
       );
     }
   };
+
+  const handleEdit = () => {
+    setIsDisabled(true);
+    navigate(`/patterns/${pattern._id}/edit`)
+  }
 
   if (!pattern) return <p className="text-center p-4">Pattern loading...</p>;
 
@@ -63,20 +76,23 @@ export default function PatternDetailsPage() {
       </div>
       <div className="text-center">
         <button
-          onClick={() => reactToPrintFn()}
-          className="py-3 px-4 mt-4 m-2 font-semibold bg-slate-500 rounded-lg focus:bg-slate-400 focus:outline-none hover:bg-slate-400"
+          onClick={handlePrint}
+          disabled={isDisabled}
+          className="py-3 px-4 mt-4 m-2 font-semibold bg-slate-500 rounded-lg cursor-pointer focus:bg-slate-400 focus:outline-none hover:bg-slate-400 disabled:bg-gray-700 disabled:text-gray-400 disabled:cursor-auto"
         >
           Print
         </button>
         <button
-          onClick={() => navigate(`/patterns/${pattern._id}/edit`)}
-          className="py-3 px-4 mt-4 m-2 font-semibold bg-slate-500 rounded-lg focus:bg-slate-400 focus:outline-none hover:bg-slate-400"
+          onClick={handleEdit}
+          disabled={isDisabled}
+          className="py-3 px-4 mt-4 m-2 font-semibold bg-slate-500 rounded-lg cursor-pointer focus:bg-slate-400 focus:outline-none hover:bg-slate-400 disabled:bg-gray-700 disabled:text-gray-400 disabled:cursor-auto"
         >
           Edit
         </button>
         <button
           onClick={handleDelete}
-          className="py-3 px-4 mt-4 m-2 font-semibold bg-slate-500 rounded-lg focus:bg-slate-400 focus:outline-none hover:bg-slate-400"
+          disabled={isDisabled}
+          className="py-3 px-4 mt-4 m-2 font-semibold bg-slate-500 rounded-lg cursor-pointer focus:bg-slate-400 focus:outline-none hover:bg-slate-400 disabled:bg-gray-700 disabled:text-gray-400 disabled:cursor-auto"
         >
           Delete
         </button>

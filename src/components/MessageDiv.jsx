@@ -1,3 +1,5 @@
+// an error/success div component
+
 export default function MessageDiv({ message, messageType, setMessage }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-slate-900/50 z-50">
