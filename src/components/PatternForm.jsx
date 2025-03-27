@@ -32,7 +32,7 @@ export default function NewPatternForm({
           required
         />
         <div className="flex items-center flex-wrap justify-center">
-        <label htmlFor="footCirc" className="w-1/2 tex-sm font-medium">Foot circumference (in): </label>
+        <label htmlFor="footCirc" className="w-2/3 tex-sm font-medium">Foot circumference (in): </label>
         <input
           className="my-1 p-1 ml-2 rounded-md border w-1/4 border-slate-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
           type="number"
@@ -44,7 +44,7 @@ export default function NewPatternForm({
           onChange={handleChange}
           required
         />
-        <label htmlFor="footLength" className="w-1/2 tex-sm font-medium">Foot length (in):</label>
+        <label htmlFor="footLength" className="w-2/3 tex-sm font-medium">Foot length (in):</label>
         <input
           className="my-1 p-1 ml-2 rounded-md border w-1/4 border-slate-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
           type="number"
@@ -56,7 +56,7 @@ export default function NewPatternForm({
           onChange={handleChange}
           required
         />
-        <label htmlFor="thighCirc" className="w-1/2 tex-sm font-medium">Thigh circumference (in): </label>
+        <label htmlFor="thighCirc" className="w-2/3 tex-sm font-medium">Thigh circumference (in): </label>
         <input
           className="my-1 p-1 ml-2 rounded-md border w-1/4 border-slate-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
           type="number"
@@ -68,7 +68,7 @@ export default function NewPatternForm({
           onChange={handleChange}
           required
         />
-        <label htmlFor="sockLength" className="w-1/2 tex-sm font-medium">Desired sock height (in):</label>
+        <label htmlFor="sockLength" className="w-2/3 tex-sm font-medium">Desired sock height (in):</label>
         <input
           className="my-1 p-1 ml-2 rounded-md border w-1/4 border-slate-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
           type="number"
@@ -80,7 +80,7 @@ export default function NewPatternForm({
           onChange={handleChange}
           required
         />
-        <label htmlFor="stitchGauge" className="w-1/2 tex-sm font-medium">Stitches per inch:</label>
+        <label htmlFor="stitchGauge" className="w-2/3 tex-sm font-medium">Stitches per inch:</label>
         <input
           className="my-1 p-1 ml-2 rounded-md border w-1/4 border-slate-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
           type="number"
@@ -92,7 +92,7 @@ export default function NewPatternForm({
           onChange={handleChange}
           required
         />
-        <label htmlFor="rowGauge" className="w-1/2 tex-sm font-medium">Rows per inch:</label>
+        <label htmlFor="rowGauge" className="w-2/3 tex-sm font-medium">Rows per inch:</label>
         <input
           className="my-1 p-1 ml-2 rounded-md border w-1/4 border-slate-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
           type="number"
@@ -104,7 +104,7 @@ export default function NewPatternForm({
           onChange={handleChange}
           required
         />
-        <label htmlFor="patternRepeat" className="w-1/2 tex-sm font-medium">Pattern repeat length:</label>
+        <label htmlFor="patternRepeat" className="w-2/3 tex-sm font-medium">Pattern repeat length (stitches):</label>
         <input
           className="my-1 p-1 ml-2 rounded-md border w-1/4 border-slate-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
           type="number"
