@@ -2,6 +2,8 @@
 
 This is the frontend for my Per Scholas capstone project — a four-page web app that generates a custom-sized, toe-up, thigh-high stocking pattern.
 
+live site can be found (here)[https://stockingpatterngenerator.netlify.app/]
+
 ## Features
 - **Pattern Generator:** The home page allows users to enter personal measurements (or those of the intended recipient), gauge swatch details, desired stocking length, and the length of an accent pattern. The app then calculates a tailored knitting pattern.
 - **Pattern Management:** Saved patterns can be accessed from the "Patterns" tab. Clicking on a pattern title opens the full pattern, where users can print, edit, or delete it.
