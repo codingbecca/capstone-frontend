@@ -2,7 +2,7 @@
 
 This is the frontend for my Per Scholas capstone project — a four-page web app that generates a custom-sized, toe-up, thigh-high stocking pattern.
 
-live site can be found (here)[https://stockingpatterngenerator.netlify.app/]
+live site can be found [here](https://stockingpatterngenerator.netlify.app/)
 
 ## Features
 - **Pattern Generator:** The home page allows users to enter personal measurements (or those of the intended recipient), gauge swatch details, desired stocking length, and the length of an accent pattern. The app then calculates a tailored knitting pattern.
@@ -13,6 +13,8 @@ live site can be found (here)[https://stockingpatterngenerator.netlify.app/]
 
 ## Technology used
 - React (frontend framework)
+- Redux & Redux Toolkit (state management)
+- React Router (routing)
 - Tailwind CSS & vanilla CSS (styling)
 - Axios (API requests)
 
